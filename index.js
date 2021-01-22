@@ -252,37 +252,51 @@ console.log("EJEMPLO =>", listaDePeliculas.resultados[0].genero[1]) // " [{ }]" 
 // Cada objeto tiene las propiedades nombre, temporada y foto.
 // Crea una funcion con el nombre mostrarGanadoras, que reciba el array como parametro.
 // Dentro de la funcion, recorrer el array utilizando un ciclo for y mostrá el nombre y la temporada que ganó. Por ejemplo: Bianca Del Rio ganó la temporada 6
-// const ganadoras = [
-//   {
-//     nombre: 'Bebe Zahara Benet',
-//     temporada: '1',
-//     foto: 'http://www.nokeynoshade.party/images/bebe-zahara-benet.jpg'
-//   },
-//   {
-//     nombre: 'Tyra Sanchez',
-//     temporada: '2',
-//     foto: 'http://www.nokeynoshade.party/images/tyra-sanchez.jpg'
-//   },
-//   { nombre: 'Raja',
-//     temporada: '3',
-//     foto: 'http://www.nokeynoshade.party/images/raja.jpg'
-//   },
-//   {
-//     nombre: 'Sharon Needles',
-//     temporada: '4',
-//     foto: 'http://www.nokeynoshade.party/images/sharon-needles.jpg'
-//   },
-//   {
-//     nombre: 'Jinkx Monsoon',
-//     temporada: '5',
-//     foto: 'http://www.nokeynoshade.party/images/jinkx-monsoon.jpg'
-//   },
-//   {
-//     nombre: 'Bianca Del Rio',
-//     temporada: '6',
-//     foto: 'http://www.nokeynoshade.party/images/bianca-del-rio.jpg'
-//   }
-// ];
+const ganadoras = [
+  {
+    nombre: 'Bebe Zahara Benet',
+    temporada: '1',
+    foto: 'http://www.nokeynoshade.party/images/bebe-zahara-benet.jpg'
+  },
+  {
+    nombre: 'Tyra Sanchez',
+    temporada: '2',
+    foto: 'http://www.nokeynoshade.party/images/tyra-sanchez.jpg'
+  },
+  { nombre: 'Raja',
+    temporada: '3',
+    foto: 'http://www.nokeynoshade.party/images/raja.jpg'
+  },
+  {
+    nombre: 'Sharon Needles',
+    temporada: '4',
+    foto: 'http://www.nokeynoshade.party/images/sharon-needles.jpg'
+  },
+  {
+    nombre: 'Jinkx Monsoon',
+    temporada: '5',
+    foto: 'http://www.nokeynoshade.party/images/jinkx-monsoon.jpg'
+  },
+  {
+    nombre: 'Bianca Del Rio',
+    temporada: '6',
+    foto: 'http://www.nokeynoshade.party/images/bianca-del-rio.jpg'
+  }
+];
+
+const mostrarGanadoras = (array) => {
+  // for (let i = 0; i < array.length; i++) {
+  //   console.log(`${array[i].nombre} gano la temporada ${array[i].temporada}`)
+
+  //   //console.log(array[i]) => ME DA CADA ELEMENTO(objeto) DEL ARRAY EN LA CONSOLA
+    
+  // }
+  for (const ganadora of array ) {
+    console.log(`${ganadora.nombre} gano la temporada ${ganadora.temporada}`)
+  }
+} 
+console.log("EJERCICIO ==> 9")
+mostrarGanadoras(ganadoras)
 
 // ///// RETORNO DE LA FUNCION
 // // Bebe Zahara Benet ganó la temporada 1
@@ -301,17 +315,32 @@ console.log("EJEMPLO =>", listaDePeliculas.resultados[0].genero[1]) // " [{ }]" 
 // La duración total del disco (suma de la duración de cada canción)
 // La duración promedio por canción (un promedio entre todas las duraciones)
 // Para ello crear las funciones calcularDuracionTotal y calcularPromedioPorCancion
-// const nevermind = [
-//   { id: 1, nombre: "Smells Like Teen Spirit", duracion: 302 },
-//   { id: 2, nombre: "In Bloom", duracion: 255 },
-//   { id: 3, nombre: "Come As You Are", duracion: 219 },
-//   { id: 4, nombre: "Breed", duracion: 184 },
-//   { id: 5, nombre: "Lithium", duracion: 257 }
-// ];
+const nevermind = [
+  { id: 1, nombre: "Smells Like Teen Spirit", duracion: 302 },
+  { id: 2, nombre: "In Bloom", duracion: 255 },
+  { id: 3, nombre: "Come As You Are", duracion: 219 },
+  { id: 4, nombre: "Breed", duracion: 184 },
+  { id: 5, nombre: "Lithium", duracion: 257 }
+];
 
-// ///// RESULTADO
-// console.log(calcularDuracionTotal); // 1217
-// console.log(calcularPromedioPorCancion); // 243.4
+
+let suma = 0
+
+const calcularDuracionTotal = nevermind.forEach( (elem, indice) => {
+  suma += elem["duracion"]
+})
+
+let promedio = ""
+const calcularPromedioPorCancion = nevermind.forEach((elem, indice) => {
+
+    promedio = suma / elem["id"] 
+  
+  
+})
+///// RESULTADO
+
+console.log("EJERCICIO 10 ==>a) ", suma); // 1217
+console.log("EJERCICIO 10 ==>b) ", promedio); // 243.4
 
 
 // Ejercicio 11
